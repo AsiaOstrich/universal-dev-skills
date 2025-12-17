@@ -25,6 +25,9 @@ This project provides Claude Code Skills that bring software development best pr
 | `code-review-assistant` | Systematic code review checklist | "review", "PR", "code review" |
 | `testing-guide` | Testing pyramid and test writing standards | Writing tests, test coverage discussions |
 | `release-standards` | Semantic versioning and changelog formatting | Release preparation, version updates |
+| `git-workflow-guide` | Git branching strategies and merge operations | "branch", "merge", "PR", "分支", "合併" |
+| `documentation-guide` | Documentation structure and README best practices | "README", "docs", "documentation", "文件" |
+| `requirement-assistant` | Requirement writing and user story guidance | "requirement", "user story", "issue", "需求" |
 
 ## Installation
 
@@ -117,6 +120,9 @@ These skills are derived from [universal-doc-standards](https://github.com/AsiaO
 | code-review-assistant | `core/code-review-checklist.md`, `core/checkin-standards.md` |
 | testing-guide | `core/testing-standards.md` |
 | release-standards | `core/versioning.md`, `core/changelog-standards.md` |
+| git-workflow-guide | `core/git-workflow.md` |
+| documentation-guide | `core/documentation-structure.md` |
+| requirement-assistant | `templates/requirement-*.md` |
 
 ## Version Mapping
 

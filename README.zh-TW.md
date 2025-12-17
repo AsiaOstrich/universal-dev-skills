@@ -25,6 +25,9 @@
 | `code-review-assistant` | 系統化的程式碼審查檢查清單 | "review"、"PR"、"code review" |
 | `testing-guide` | 測試金字塔與測試撰寫標準 | 撰寫測試、測試覆蓋率討論 |
 | `release-standards` | 語意化版本與變更日誌格式 | 發布準備、版本更新 |
+| `git-workflow-guide` | Git 分支策略與合併操作指南 | "branch"、"merge"、"PR"、「分支」、「合併」 |
+| `documentation-guide` | 文件結構與 README 最佳實踐 | "README"、"docs"、"documentation"、「文件」 |
+| `requirement-assistant` | 需求撰寫與使用者故事指南 | "requirement"、"user story"、"issue"、「需求」 |
 
 ## 安裝
 
@@ -117,6 +120,9 @@ This project uses **中文** certainty tags.
 | code-review-assistant | `core/code-review-checklist.md`、`core/checkin-standards.md` |
 | testing-guide | `core/testing-standards.md` |
 | release-standards | `core/versioning.md`、`core/changelog-standards.md` |
+| git-workflow-guide | `core/git-workflow.md` |
+| documentation-guide | `core/documentation-structure.md` |
+| requirement-assistant | `templates/requirement-*.md` |
 
 ## 版本對照
 
