@@ -136,11 +136,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-This project is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+This project uses a **dual-license** model:
 
-You are free to:
-- **Share** — copy and redistribute the material
-- **Adapt** — remix, transform, and build upon the material
+| Content Type | License |
+|-------------|---------|
+| Documentation (`*.md`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Code (`*.sh`, etc.) | [MIT](https://opensource.org/licenses/MIT) |
 
-Under the following terms:
-- **Attribution** — You must give appropriate credit
+See [LICENSE](LICENSE) for details.

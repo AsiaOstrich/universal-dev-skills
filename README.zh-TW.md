@@ -136,11 +136,11 @@ This project uses **中文** certainty tags.
 
 ## 授權
 
-本專案採用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授權。
+本專案採用**雙授權**模式：
 
-你可以自由地：
-- **分享** — 複製及散布本素材
-- **改作** — 重混、轉換、及依本素材建立新素材
+| 內容類型 | 授權 |
+|---------|------|
+| 文件 (`*.md`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| 程式碼 (`*.sh` 等) | [MIT](https://opensource.org/licenses/MIT) |
 
-惟需遵守以下條件：
-- **姓名標示** — 你必須給予適當的姓名標示
+詳見 [LICENSE](LICENSE)。
