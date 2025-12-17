@@ -2,6 +2,118 @@
 
 Thank you for your interest in contributing!
 
+---
+
+## Skill Configuration | Skill 設定
+
+Some skills support project-specific configuration. Add the following sections to your project's `CONTRIBUTING.md` to customize behavior.
+
+### 1. Commit Message Language | 提交訊息語言
+
+**Skill**: `commit-standards`
+
+```markdown
+## Commit Message Language
+
+This project uses **English** commit types.
+<!-- Options: English | Traditional Chinese | Bilingual -->
+
+### Allowed Types
+feat, fix, refactor, docs, style, test, perf, build, ci, chore, revert, security
+```
+
+| Option | Example |
+|--------|---------|
+| **English** (default) | `feat(auth): Add OAuth2 login` |
+| **Traditional Chinese** | `新增(認證): 實作 OAuth2 登入` |
+| **Bilingual** | `feat(auth): Add OAuth2 login. 新增 OAuth2 登入。` |
+
+---
+
+### 2. Certainty Tag Language | 確定性標籤語言
+
+**Skill**: `ai-collaboration-standards`
+
+```markdown
+## Certainty Tag Language
+
+This project uses **English** certainty tags.
+<!-- Options: English | 中文 -->
+```
+
+| Option | Tags |
+|--------|------|
+| **English** (default) | `[Confirmed]`, `[Inferred]`, `[Assumption]`, `[Unknown]`, `[Need Confirmation]` |
+| **中文** | `[已確認]`, `[推論]`, `[假設]`, `[未知]`, `[待確認]` |
+
+---
+
+### 3. Git Workflow | Git 工作流程
+
+**Skill**: `git-workflow-guide`
+
+```markdown
+## Git Workflow
+
+### Branching Strategy
+This project uses **GitHub Flow**.
+<!-- Options: GitFlow | GitHub Flow | Trunk-Based Development -->
+
+### Branch Naming
+Format: `<type>/<description>`
+Example: `feature/oauth-login`, `fix/memory-leak`
+
+### Merge Strategy
+- Feature branches: **Squash Merge**
+<!-- Options: Merge Commit | Squash Merge | Rebase -->
+```
+
+| Strategy | Best For |
+|----------|----------|
+| **GitFlow** | Monthly releases, multiple versions |
+| **GitHub Flow** (default) | Weekly/bi-weekly releases, simple workflow |
+| **Trunk-Based** | Multiple deploys/day, CI/CD mature teams |
+
+| Merge Strategy | When to Use |
+|----------------|-------------|
+| **Merge Commit** | Long-lived features, GitFlow releases |
+| **Squash Merge** | Feature branches, clean history |
+| **Rebase** | Trunk-Based, short-lived branches |
+
+---
+
+### Configuration Template | 設定範本
+
+Complete template for your project:
+
+```markdown
+## Commit Message Language
+
+This project uses **English** commit types.
+<!-- Options: English | Traditional Chinese | Bilingual -->
+
+## Certainty Tag Language
+
+This project uses **English** certainty tags.
+<!-- Options: English | 中文 -->
+
+## Git Workflow
+
+### Branching Strategy
+This project uses **GitHub Flow**.
+<!-- Options: GitFlow | GitHub Flow | Trunk-Based Development -->
+
+### Branch Naming
+Format: `<type>/<description>`
+Example: `feature/oauth-login`, `fix/memory-leak`
+
+### Merge Strategy
+- Feature branches: **Squash Merge**
+<!-- Options: Merge Commit | Squash Merge | Rebase -->
+```
+
+---
+
 ## Upstream Sync
 
 This project derives its content from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards). When updating skills:
@@ -54,4 +166,9 @@ description: |
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under CC BY 4.0.
+By contributing, you agree that your contributions will be licensed under the project's dual-license model:
+
+| Content Type | License |
+|-------------|---------|
+| Documentation (`*.md`) | CC BY 4.0 |
+| Code (`*.sh`, etc.) | MIT |

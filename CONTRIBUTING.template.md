@@ -57,6 +57,34 @@ This project uses **English** certainty tags.
 
 ---
 
+### Git Workflow
+
+#### Branching Strategy
+
+This project uses **GitHub Flow**.
+<!-- Options: GitFlow | GitHub Flow | Trunk-Based Development -->
+
+#### Branch Naming
+
+Format: `<type>/<description>`
+
+| Type | Usage | Example |
+|------|-------|---------|
+| `feature/` | New functionality | `feature/oauth-login` |
+| `fix/` | Bug fixes | `fix/memory-leak` |
+| `hotfix/` | Urgent fixes | `hotfix/security-patch` |
+| `refactor/` | Code refactoring | `refactor/extract-service` |
+| `docs/` | Documentation | `docs/api-reference` |
+| `chore/` | Maintenance | `chore/update-deps` |
+| `release/` | Release prep | `release/v1.2.0` |
+
+#### Merge Strategy
+
+- Feature branches: **Squash Merge**
+<!-- Options: Merge Commit | Squash Merge | Rebase -->
+
+---
+
 ## Code Review
 
 ### Comment Prefixes

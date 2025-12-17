@@ -92,7 +92,9 @@ This project uses **English** certainty tags.
 
 ### Configuration Template
 
-A complete template is available at [CONTRIBUTING.template.md](CONTRIBUTING.template.md). Copy it to your project and customize as needed.
+See the [Skill Configuration](CONTRIBUTING.md#skill-configuration--skill-設定) section in CONTRIBUTING.md for complete configuration options.
+
+A standalone template file is available at [CONTRIBUTING.template.md](CONTRIBUTING.template.md) - copy it to your project and customize as needed.
 
 ### Default Behavior
 

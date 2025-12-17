@@ -92,7 +92,9 @@ This project uses **中文** certainty tags.
 
 ### 設定範本
 
-完整範本請參閱 [CONTRIBUTING.template.md](CONTRIBUTING.template.md)。複製到你的專案並依需求調整。
+完整設定選項請參閱 [CONTRIBUTING.md 的 Skill Configuration 章節](CONTRIBUTING.md#skill-configuration--skill-設定)。
+
+獨立範本檔案請參閱 [CONTRIBUTING.template.md](CONTRIBUTING.template.md)，複製到你的專案並依需求調整。
 
 ### 預設行為
 
