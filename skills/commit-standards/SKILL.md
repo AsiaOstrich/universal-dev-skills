@@ -134,4 +134,43 @@ Refs #789      # Links without closing
 
 ---
 
+## Configuration Detection
+
+This skill supports project-specific language configuration.
+
+### Detection Order
+
+1. Check `CONTRIBUTING.md` for "Commit Message Language" section
+2. If found, use the specified option (English / Traditional Chinese / Bilingual)
+3. If not found, **default to English** for maximum tool compatibility
+
+### First-Time Setup
+
+If no configuration found and context is unclear:
+
+1. Ask the user: "This project hasn't configured commit message language preference. Which option would you like to use? (English / 中文 / Bilingual)"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Commit Message Language
+
+This project uses **[chosen option]** commit types.
+<!-- Options: English | Traditional Chinese | Bilingual -->
+```
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Commit Message Language
+
+This project uses **English** commit types.
+
+### Allowed Types
+feat, fix, refactor, docs, style, test, perf, build, ci, chore, revert, security
+```
+
+---
+
 **License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)

@@ -99,4 +99,47 @@ Before making any statement:
 
 ---
 
+## Configuration Detection
+
+This skill supports project-specific language configuration for certainty tags.
+
+### Detection Order
+
+1. Check `CONTRIBUTING.md` for "Certainty Tag Language" section
+2. If found, use the specified language (English / 中文)
+3. If not found, **default to English** tags
+
+### First-Time Setup
+
+If no configuration found and context is unclear:
+
+1. Ask the user: "This project hasn't configured certainty tag language preference. Which would you like to use? (English / 中文)"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Certainty Tag Language
+
+This project uses **[English / 中文]** certainty tags.
+<!-- Options: English | 中文 -->
+```
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Certainty Tag Language
+
+This project uses **English** certainty tags.
+
+### Tag Reference
+- [Confirmed] - Direct evidence from code/docs
+- [Inferred] - Logical deduction from evidence
+- [Assumption] - Based on common patterns
+- [Unknown] - Information not available
+- [Need Confirmation] - Requires user clarification
+```
+
+---
+
 **License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)

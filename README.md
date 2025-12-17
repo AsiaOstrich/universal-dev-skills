@@ -1,5 +1,7 @@
 # Universal Dev Skills
 
+[English](README.md) | [繁體中文](README.zh-TW.md)
+
 Claude Code Skills for software development standards.
 
 > Derived from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.0
@@ -57,6 +59,44 @@ cp -r /path/to/universal-dev-skills/skills/* .claude/skills/
 git add .claude/skills
 git commit -m "chore: add universal-dev-skills"
 ```
+
+## Configuration
+
+Some skills support project-specific configuration (e.g., language preferences). Configuration is read from your project's `CONTRIBUTING.md`.
+
+### Configurable Options
+
+| Skill | Configuration | Default |
+|-------|---------------|---------|
+| `commit-standards` | Commit message language | English |
+| `ai-collaboration-standards` | Certainty tag language | English |
+
+### How to Configure
+
+Add the following sections to your project's `CONTRIBUTING.md`:
+
+```markdown
+## Commit Message Language
+
+This project uses **English** commit types.
+<!-- Options: English | Traditional Chinese | Bilingual -->
+
+## Certainty Tag Language
+
+This project uses **English** certainty tags.
+<!-- Options: English | 中文 -->
+```
+
+### Configuration Template
+
+A complete template is available at [CONTRIBUTING.template.md](CONTRIBUTING.template.md). Copy it to your project and customize as needed.
+
+### Default Behavior
+
+If no configuration is found:
+1. Skills default to **English** for maximum tool compatibility
+2. On first use with unclear context, Claude may ask for your preference
+3. Claude will suggest documenting your choice in `CONTRIBUTING.md`
 
 ## Usage
 
