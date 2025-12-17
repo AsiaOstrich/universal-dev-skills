@@ -1,14 +1,16 @@
 # Contributing to Universal Dev Skills
 
+[English](CONTRIBUTING.md) | [繁體中文](CONTRIBUTING.zh-TW.md)
+
 Thank you for your interest in contributing!
 
 ---
 
-## Skill Configuration | Skill 設定
+## Skill Configuration
 
 Some skills support project-specific configuration. Add the following sections to your project's `CONTRIBUTING.md` to customize behavior.
 
-### 1. Commit Message Language | 提交訊息語言
+### 1. Commit Message Language
 
 **Skill**: `commit-standards`
 
@@ -30,7 +32,7 @@ feat, fix, refactor, docs, style, test, perf, build, ci, chore, revert, security
 
 ---
 
-### 2. Certainty Tag Language | 確定性標籤語言
+### 2. Certainty Tag Language
 
 **Skill**: `ai-collaboration-standards`
 
@@ -48,7 +50,7 @@ This project uses **English** certainty tags.
 
 ---
 
-### 3. Git Workflow | Git 工作流程
+### 3. Git Workflow
 
 **Skill**: `git-workflow-guide`
 
@@ -82,7 +84,7 @@ Example: `feature/oauth-login`, `fix/memory-leak`
 
 ---
 
-### Configuration Template | 設定範本
+### Configuration Template
 
 Complete template for your project:
 
@@ -141,7 +143,7 @@ name: skill-name
 description: |
   Brief description of what this skill does.
   Use when: [trigger conditions]
-  Keywords: keyword1, keyword2, 關鍵字
+  Keywords: keyword1, keyword2
 ---
 
 # Skill Title
@@ -170,5 +172,5 @@ By contributing, you agree that your contributions will be licensed under the pr
 
 | Content Type | License |
 |-------------|---------|
-| Documentation (`*.md`) | CC BY 4.0 |
-| Code (`*.sh`, etc.) | MIT |
+| Documentation (`*.md`) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| Code (`*.sh`, etc.) | [MIT](https://opensource.org/licenses/MIT) |
