@@ -22,6 +22,9 @@ SKILLS=(
     "code-review-assistant"
     "testing-guide"
     "release-standards"
+    "git-workflow-guide"
+    "documentation-guide"
+    "requirement-assistant"
 )
 
 echo "Available skills:"
