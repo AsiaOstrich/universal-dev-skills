@@ -1,0 +1,104 @@
+---
+name: release-standards
+description: |
+  Semantic versioning and changelog formatting for software releases.
+  Use when: preparing releases, updating version numbers, writing changelogs.
+  Keywords: version, release, changelog, semver, major, minor, patch, 版本, 發布, 變更日誌.
+---
+
+# Release Standards
+
+This skill provides semantic versioning and changelog formatting standards.
+
+## Quick Reference
+
+### Semantic Versioning Format
+
+```
+MAJOR.MINOR.PATCH[-PRERELEASE][+BUILD]
+
+Examples:
+2.3.1
+1.0.0-alpha.1
+3.2.0-beta.2+20250112
+```
+
+### Version Incrementing Rules
+
+| Component | When to Increment | Example |
+|-----------|-------------------|----------|
+| **MAJOR** | Breaking changes | 1.9.5 → 2.0.0 |
+| **MINOR** | New features (backward-compatible) | 2.3.5 → 2.4.0 |
+| **PATCH** | Bug fixes (backward-compatible) | 3.1.2 → 3.1.3 |
+
+### Pre-release Identifiers
+
+| Identifier | Stability | Audience |
+|------------|-----------|----------|
+| `alpha` | Unstable | Internal team |
+| `beta` | Mostly stable | Early adopters |
+| `rc` | Stable | Beta testers |
+
+### CHANGELOG Categories
+
+| Category | Usage |
+|----------|-------|
+| **Added** | New features |
+| **Changed** | Changes in existing functionality |
+| **Deprecated** | Soon to be removed |
+| **Removed** | Removed features |
+| **Fixed** | Bug fixes |
+| **Security** | Vulnerability fixes |
+
+## Detailed Guidelines
+
+For complete standards, see:
+- [Semantic Versioning Guide](./semantic-versioning.md)
+- [Changelog Format](./changelog-format.md)
+
+## CHANGELOG Entry Format
+
+```markdown
+## [VERSION] - YYYY-MM-DD
+
+### Added
+- Add user dashboard with customizable widgets (#123)
+
+### Changed
+- **BREAKING**: Change API response format from XML to JSON
+
+### Fixed
+- Fix memory leak when processing large files (#456)
+
+### Security
+- Fix SQL injection vulnerability (CVE-2025-12345)
+```
+
+## Breaking Changes
+
+Mark breaking changes with **BREAKING** prefix:
+
+```markdown
+### Changed
+- **BREAKING**: Remove deprecated `getUserById()`, use `getUser()` instead
+```
+
+## Git Tagging
+
+```bash
+# Create annotated tag (recommended)
+git tag -a v1.2.0 -m "Release version 1.2.0"
+
+# Push tag to remote
+git push origin v1.2.0
+```
+
+## Version Ordering
+
+```
+1.0.0-alpha.1 < 1.0.0-alpha.2 < 1.0.0-beta.1 < 1.0.0-rc.1 < 1.0.0
+```
+
+---
+
+**License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)
