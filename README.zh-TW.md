@@ -65,20 +65,43 @@ git commit -m "chore: add universal-dev-skills"
 
 ## 設定
 
-部分 skills 支援專案層級設定（例如語言偏好）。設定會從專案的 `CONTRIBUTING.md` 讀取。
+Skills 支援透過專案的 `CONTRIBUTING.md` 進行專案層級設定。設定分為兩個層次：
 
-### 可設定選項
+### 1. 停用 Skills
+
+預設情況下，所有已安裝的 skills 都會啟用。若要停用特定 skills：
+
+```markdown
+## Disabled Skills
+
+- testing-guide
+- release-standards
+<!-- 列出的 skills 將被停用 -->
+```
+
+### 2. 各 Skill 專屬選項
 
 | Skill | 設定項目 | 預設值 |
 |-------|----------|--------|
 | `commit-standards` | 提交訊息語言 | English |
 | `ai-collaboration-standards` | 確定性標籤語言 | English |
+| `git-workflow-guide` | 分支/合併策略 | GitHub Flow |
+| `code-review-assistant` | 審查評論語言 | English |
+| `testing-guide` | 覆蓋率目標 | 80% line |
+| `release-standards` | 版本格式 | SemVer |
+| `documentation-guide` | 文件語言 | English |
+| `requirement-assistant` | 需求語言 | English |
 
 ### 如何設定
 
-在專案的 `CONTRIBUTING.md` 中加入以下區塊：
+在專案的 `CONTRIBUTING.md` 中加入區塊：
 
 ```markdown
+## Disabled Skills
+
+- testing-guide
+<!-- 僅列出要停用的 skills -->
+
 ## Commit Message Language
 
 This project uses **Traditional Chinese** commit types.
@@ -88,20 +111,92 @@ This project uses **Traditional Chinese** commit types.
 
 This project uses **中文** certainty tags.
 <!-- Options: English | 中文 -->
+
+## Git Workflow
+
+### Branching Strategy
+This project uses **GitHub Flow**.
+<!-- Options: GitFlow | GitHub Flow | Trunk-Based Development -->
+
+### Merge Strategy
+- Feature branches: **Squash Merge**
+<!-- Options: Merge Commit | Squash Merge | Rebase -->
+
+## Code Review Language
+
+This project uses **中文** for code review comments.
+<!-- Options: English | 中文 -->
+
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+## Documentation Language
+
+This project uses **中文** for documentation.
+<!-- Options: English | 中文 -->
+
+## Requirement Language
+
+This project uses **中文** for requirements and issues.
+<!-- Options: English | 中文 -->
 ```
 
 ### 設定範本
 
-完整設定選項請參閱 [CONTRIBUTING.md 的 Skill Configuration 章節](CONTRIBUTING.md#skill-configuration--skill-設定)。
+完整設定選項請參閱 [CONTRIBUTING.md 的 Skill Configuration 章節](CONTRIBUTING.md#skill-configuration)。
 
 獨立範本檔案請參閱 [CONTRIBUTING.template.md](CONTRIBUTING.template.md)，複製到你的專案並依需求調整。
 
 ### 預設行為
 
 如果沒有找到設定：
-1. Skills 預設使用 **English** 以獲得最佳工具相容性
-2. 首次使用且上下文不明確時，Claude 可能會詢問你的偏好
-3. Claude 會建議將選擇記錄在 `CONTRIBUTING.md`
+1. 所有 skills **預設啟用**
+2. Skills 預設使用 **English** 以獲得最佳工具相容性
+3. 首次使用且上下文不明確時，Claude 可能會詢問你的偏好
+4. Claude 會建議將選擇記錄在 `CONTRIBUTING.md`
+
+## 管理 Skills
+
+### 停用特定 Skill
+
+**全域層級**（影響所有專案）：
+```bash
+rm -rf ~/.claude/skills/[skill-name]
+```
+
+**專案層級**（僅影響當前專案）：
+- 不要在專案的 `.claude/skills/` 目錄中包含該 skill 即可
+
+### Skill 優先順序
+
+當同一個 skill 同時存在於兩個位置時：
+1. **專案層級** (`.claude/skills/`) 優先
+2. **全域層級** (`~/.claude/skills/`) 作為備用
+
+這讓你可以針對不同專案覆蓋或停用特定 skills。
+
+### 重新安裝 Skills
+
+重新安裝或更新 skills：
+```bash
+cd universal-dev-skills
+git pull
+./install.sh
+```
 
 ## 使用方式
 

@@ -75,4 +75,45 @@ Consider extracting validation logic to a separate method.
 
 ---
 
+## Configuration Detection
+
+This skill supports project-specific configuration.
+
+### Detection Order
+
+1. Check `CONTRIBUTING.md` for "Disabled Skills" section
+   - If this skill is listed, it is disabled for this project
+2. Check `CONTRIBUTING.md` for "Code Review Language" section
+3. If not found, **default to English**
+
+### First-Time Setup
+
+If no configuration found and context is unclear:
+
+1. Ask the user: "This project hasn't configured code review language. Which option would you like? (English / 中文)"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Code Review Language
+
+This project uses **[chosen option]** for code review comments.
+<!-- Options: English | 中文 -->
+```
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Code Review Language
+
+This project uses **English** for code review comments.
+<!-- Options: English | 中文 -->
+
+### Comment Prefixes
+BLOCKING, IMPORTANT, SUGGESTION, QUESTION, NOTE
+```
+
+---
+
 **License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)

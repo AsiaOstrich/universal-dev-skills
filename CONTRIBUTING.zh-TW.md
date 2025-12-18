@@ -6,6 +6,26 @@
 
 ---
 
+## 停用的 Skills
+
+預設情況下，所有已安裝的 skills 都會啟用。若要停用特定 skills，請在專案的 `CONTRIBUTING.md` 中加入「Disabled Skills」區塊：
+
+```markdown
+## Disabled Skills
+
+- testing-guide
+- release-standards
+<!-- 列出的 skills 將在此專案中停用 -->
+```
+
+| 設定狀態 | 行為 |
+|----------|------|
+| 區塊不存在 | 啟用所有 skills（預設） |
+| 區塊為空或被註解 | 啟用所有 skills（預設） |
+| 區塊存在且有 skill 清單 | 列出的 skills 被停用 |
+
+---
+
 ## Skill 設定
 
 部分 Skills 支援專案層級設定。在專案的 `CONTRIBUTING.md` 中加入以下章節即可自訂行為。
@@ -84,6 +104,119 @@ Example: `feature/oauth-login`, `fix/memory-leak`
 
 ---
 
+### 4. 程式碼審查語言
+
+**Skill**: `code-review-assistant`
+
+```markdown
+## Code Review Language
+
+This project uses **中文** for code review comments.
+<!-- Options: English | 中文 -->
+```
+
+| 選項 | 註解前綴 |
+|------|----------|
+| **English**（預設） | `BLOCKING`, `IMPORTANT`, `SUGGESTION`, `QUESTION`, `NOTE` |
+| **中文** | `阻擋`, `重要`, `建議`, `問題`, `備註` |
+
+---
+
+### 5. 測試標準
+
+**Skill**: `testing-guide`
+
+```markdown
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+### Testing Framework
+- Unit Tests: Jest
+- Integration Tests: Supertest
+- E2E Tests: Playwright
+```
+
+| 指標 | 最低 | 建議 |
+|------|------|------|
+| Line | 70% | 85% |
+| Branch | 60% | 80% |
+| Function | 80% | 90% |
+
+---
+
+### 6. 發布標準
+
+**Skill**: `release-standards`
+
+```markdown
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+### Release Process
+1. Update version in package.json
+2. Update CHANGELOG.md
+3. Create git tag with `v` prefix (e.g., v1.2.0)
+4. Push tag to trigger release workflow
+```
+
+| 版本元件 | 何時遞增 |
+|----------|----------|
+| **MAJOR** | 破壞性變更 |
+| **MINOR** | 新功能（向下相容） |
+| **PATCH** | 錯誤修正（向下相容） |
+
+---
+
+### 7. 文件語言
+
+**Skill**: `documentation-guide`
+
+```markdown
+## Documentation Language
+
+This project uses **中文** for documentation.
+<!-- Options: English | 中文 -->
+```
+
+| 選項 | README 章節 |
+|------|-------------|
+| **English**（預設） | Installation, Usage, Contributing, License |
+| **中文** | 安裝, 使用方式, 貢獻指南, 授權 |
+
+---
+
+### 8. 需求語言
+
+**Skill**: `requirement-assistant`
+
+```markdown
+## Requirement Language
+
+This project uses **中文** for requirements and issues.
+<!-- Options: English | 中文 -->
+
+### Issue Templates Location
+`.github/ISSUE_TEMPLATE/`
+```
+
+| 選項 | 使用者故事格式 |
+|------|----------------|
+| **English**（預設） | As a [role], I want [feature], So that [benefit]. |
+| **中文** | 身為 [角色]，我希望 [功能]，以便 [效益]。 |
+
+---
+
 ### 設定範本
 
 完整範本供複製使用：
@@ -112,6 +245,38 @@ Example: `feature/oauth-login`, `fix/memory-leak`
 ### Merge Strategy
 - Feature branches: **Squash Merge**
 <!-- Options: Merge Commit | Squash Merge | Rebase -->
+
+## Code Review Language
+
+This project uses **中文** for code review comments.
+<!-- Options: English | 中文 -->
+
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+## Documentation Language
+
+This project uses **中文** for documentation.
+<!-- Options: English | 中文 -->
+
+## Requirement Language
+
+This project uses **中文** for requirements and issues.
+<!-- Options: English | 中文 -->
 ```
 
 ---

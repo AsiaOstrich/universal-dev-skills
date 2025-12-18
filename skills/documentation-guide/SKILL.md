@@ -189,9 +189,11 @@ This skill supports project-specific documentation configuration.
 
 ### Detection Order
 
-1. Check existing documentation structure
-2. Identify missing essential files
-3. Suggest improvements based on project type
+1. Check `CONTRIBUTING.md` for "Disabled Skills" section
+   - If this skill is listed, it is disabled for this project
+2. Check `CONTRIBUTING.md` for "Documentation Language" section
+3. Check existing documentation structure
+4. If not found, **default to English**
 
 ### Documentation Audit
 
@@ -210,10 +212,31 @@ When reviewing a project, check for:
 
 If documentation is missing:
 
-1. Start with README.md (essential)
-2. Add LICENSE (for open source)
-3. Add CONTRIBUTING.md (for team projects)
-4. Create docs/ structure (for complex projects)
+1. Ask the user: "This project doesn't have complete documentation. Which language should I use? (English / 中文)"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Documentation Language
+
+This project uses **[chosen option]** for documentation.
+<!-- Options: English | 中文 -->
+```
+
+3. Start with README.md (essential)
+4. Add LICENSE (for open source)
+5. Add CONTRIBUTING.md (for team projects)
+6. Create docs/ structure (for complex projects)
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Documentation Language
+
+This project uses **English** for documentation.
+<!-- Options: English | 中文 -->
+```
 
 ---
 

@@ -101,4 +101,54 @@ git push origin v1.2.0
 
 ---
 
+## Configuration Detection
+
+This skill supports project-specific configuration.
+
+### Detection Order
+
+1. Check `CONTRIBUTING.md` for "Disabled Skills" section
+   - If this skill is listed, it is disabled for this project
+2. Check `CONTRIBUTING.md` for "Release Standards" section
+3. If not found, **default to Semantic Versioning and Keep a Changelog format**
+
+### First-Time Setup
+
+If no configuration found and context is unclear:
+
+1. Ask the user: "This project hasn't configured release standards. Would you like to use Semantic Versioning?"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+```
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+### Release Process
+1. Update version in package.json
+2. Update CHANGELOG.md
+3. Create git tag with `v` prefix (e.g., v1.2.0)
+4. Push tag to trigger release workflow
+```
+
+---
+
 **License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)

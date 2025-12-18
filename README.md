@@ -65,20 +65,43 @@ git commit -m "chore: add universal-dev-skills"
 
 ## Configuration
 
-Some skills support project-specific configuration (e.g., language preferences). Configuration is read from your project's `CONTRIBUTING.md`.
+Skills support project-specific configuration through your project's `CONTRIBUTING.md`. Configuration works at two levels:
 
-### Configurable Options
+### 1. Disable Skills
+
+By default, all installed skills are enabled. To disable specific skills:
+
+```markdown
+## Disabled Skills
+
+- testing-guide
+- release-standards
+<!-- Skills listed here will be disabled -->
+```
+
+### 2. Skill-Specific Options
 
 | Skill | Configuration | Default |
 |-------|---------------|---------|
 | `commit-standards` | Commit message language | English |
 | `ai-collaboration-standards` | Certainty tag language | English |
+| `git-workflow-guide` | Branching/merge strategy | GitHub Flow |
+| `code-review-assistant` | Review comment language | English |
+| `testing-guide` | Coverage targets | 80% line |
+| `release-standards` | Versioning format | SemVer |
+| `documentation-guide` | Documentation language | English |
+| `requirement-assistant` | Requirement language | English |
 
 ### How to Configure
 
-Add the following sections to your project's `CONTRIBUTING.md`:
+Add sections to your project's `CONTRIBUTING.md`:
 
 ```markdown
+## Disabled Skills
+
+- testing-guide
+<!-- Only list skills you want to disable -->
+
 ## Commit Message Language
 
 This project uses **English** commit types.
@@ -88,20 +111,92 @@ This project uses **English** commit types.
 
 This project uses **English** certainty tags.
 <!-- Options: English | 中文 -->
+
+## Git Workflow
+
+### Branching Strategy
+This project uses **GitHub Flow**.
+<!-- Options: GitFlow | GitHub Flow | Trunk-Based Development -->
+
+### Merge Strategy
+- Feature branches: **Squash Merge**
+<!-- Options: Merge Commit | Squash Merge | Rebase -->
+
+## Code Review Language
+
+This project uses **English** for code review comments.
+<!-- Options: English | 中文 -->
+
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+## Documentation Language
+
+This project uses **English** for documentation.
+<!-- Options: English | 中文 -->
+
+## Requirement Language
+
+This project uses **English** for requirements and issues.
+<!-- Options: English | 中文 -->
 ```
 
 ### Configuration Template
 
-See the [Skill Configuration](CONTRIBUTING.md#skill-configuration--skill-設定) section in CONTRIBUTING.md for complete configuration options.
+See the [Skill Configuration](CONTRIBUTING.md#skill-configuration) section in CONTRIBUTING.md for complete configuration options.
 
 A standalone template file is available at [CONTRIBUTING.template.md](CONTRIBUTING.template.md) - copy it to your project and customize as needed.
 
 ### Default Behavior
 
 If no configuration is found:
-1. Skills default to **English** for maximum tool compatibility
-2. On first use with unclear context, Claude may ask for your preference
-3. Claude will suggest documenting your choice in `CONTRIBUTING.md`
+1. All skills are **enabled** by default
+2. Skills default to **English** for maximum tool compatibility
+3. On first use with unclear context, Claude may ask for your preference
+4. Claude will suggest documenting your choice in `CONTRIBUTING.md`
+
+## Managing Skills
+
+### Disable a Specific Skill
+
+**Global level** (affects all projects):
+```bash
+rm -rf ~/.claude/skills/[skill-name]
+```
+
+**Project level** (affects current project only):
+- Simply don't include the skill in your project's `.claude/skills/` directory
+
+### Skill Priority
+
+When the same skill exists in both locations:
+1. **Project level** (`.claude/skills/`) takes precedence
+2. **Global level** (`~/.claude/skills/`) is used as fallback
+
+This allows you to override or disable specific skills per project.
+
+### Reinstall Skills
+
+To reinstall or update skills:
+```bash
+cd universal-dev-skills
+git pull
+./install.sh
+```
 
 ## Usage
 

@@ -151,16 +151,42 @@ This skill supports project-specific requirement templates.
 
 ### Detection Order
 
-1. Check for `.github/ISSUE_TEMPLATE/` directory
-2. Check for `docs/templates/` directory
-3. Use default templates if none found
+1. Check `CONTRIBUTING.md` for "Disabled Skills" section
+   - If this skill is listed, it is disabled for this project
+2. Check `CONTRIBUTING.md` for "Requirement Language" section
+3. Check for `.github/ISSUE_TEMPLATE/` directory
+4. Check for `docs/templates/` directory
+5. If not found, **default to English** and use default templates
 
 ### First-Time Setup
 
 If no templates found:
 
-1. Ask: "This project doesn't have requirement templates. Would you like me to help create one?"
-2. Suggest appropriate template based on project type
+1. Ask the user: "This project doesn't have requirement templates. Which language should I use? (English / 中文)"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Requirement Language
+
+This project uses **[chosen option]** for requirements and issues.
+<!-- Options: English | 中文 -->
+```
+
+3. Suggest appropriate template based on project type
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Requirement Language
+
+This project uses **English** for requirements and issues.
+<!-- Options: English | 中文 -->
+
+### Issue Templates Location
+`.github/ISSUE_TEMPLATE/`
+```
 
 ---
 

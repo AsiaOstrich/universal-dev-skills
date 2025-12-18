@@ -6,6 +6,26 @@ Thank you for your interest in contributing!
 
 ---
 
+## Disabled Skills
+
+By default, all installed skills are enabled. To disable specific skills for your project, add a "Disabled Skills" section to your project's `CONTRIBUTING.md`:
+
+```markdown
+## Disabled Skills
+
+- testing-guide
+- release-standards
+<!-- Skills listed here will be disabled for this project -->
+```
+
+| Configuration | Behavior |
+|---------------|----------|
+| Section does not exist | All skills enabled (default) |
+| Section is empty or commented out | All skills enabled (default) |
+| Section exists with skill list | Listed skills are disabled |
+
+---
+
 ## Skill Configuration
 
 Some skills support project-specific configuration. Add the following sections to your project's `CONTRIBUTING.md` to customize behavior.
@@ -84,6 +104,119 @@ Example: `feature/oauth-login`, `fix/memory-leak`
 
 ---
 
+### 4. Code Review Language
+
+**Skill**: `code-review-assistant`
+
+```markdown
+## Code Review Language
+
+This project uses **English** for code review comments.
+<!-- Options: English | 中文 -->
+```
+
+| Option | Comment Prefixes |
+|--------|------------------|
+| **English** (default) | `BLOCKING`, `IMPORTANT`, `SUGGESTION`, `QUESTION`, `NOTE` |
+| **中文** | `阻擋`, `重要`, `建議`, `問題`, `備註` |
+
+---
+
+### 5. Testing Standards
+
+**Skill**: `testing-guide`
+
+```markdown
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+### Testing Framework
+- Unit Tests: Jest
+- Integration Tests: Supertest
+- E2E Tests: Playwright
+```
+
+| Metric | Minimum | Recommended |
+|--------|---------|-------------|
+| Line | 70% | 85% |
+| Branch | 60% | 80% |
+| Function | 80% | 90% |
+
+---
+
+### 6. Release Standards
+
+**Skill**: `release-standards`
+
+```markdown
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+### Release Process
+1. Update version in package.json
+2. Update CHANGELOG.md
+3. Create git tag with `v` prefix (e.g., v1.2.0)
+4. Push tag to trigger release workflow
+```
+
+| Component | When to Increment |
+|-----------|-------------------|
+| **MAJOR** | Breaking changes |
+| **MINOR** | New features (backward-compatible) |
+| **PATCH** | Bug fixes (backward-compatible) |
+
+---
+
+### 7. Documentation Language
+
+**Skill**: `documentation-guide`
+
+```markdown
+## Documentation Language
+
+This project uses **English** for documentation.
+<!-- Options: English | 中文 -->
+```
+
+| Option | README Sections |
+|--------|-----------------|
+| **English** (default) | Installation, Usage, Contributing, License |
+| **中文** | 安裝, 使用方式, 貢獻指南, 授權 |
+
+---
+
+### 8. Requirement Language
+
+**Skill**: `requirement-assistant`
+
+```markdown
+## Requirement Language
+
+This project uses **English** for requirements and issues.
+<!-- Options: English | 中文 -->
+
+### Issue Templates Location
+`.github/ISSUE_TEMPLATE/`
+```
+
+| Option | User Story Format |
+|--------|-------------------|
+| **English** (default) | As a [role], I want [feature], So that [benefit]. |
+| **中文** | 身為 [角色]，我希望 [功能]，以便 [效益]。 |
+
+---
+
 ### Configuration Template
 
 Complete template for your project:
@@ -112,6 +245,38 @@ Example: `feature/oauth-login`, `fix/memory-leak`
 ### Merge Strategy
 - Feature branches: **Squash Merge**
 <!-- Options: Merge Commit | Squash Merge | Rebase -->
+
+## Code Review Language
+
+This project uses **English** for code review comments.
+<!-- Options: English | 中文 -->
+
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+## Release Standards
+
+### Versioning
+This project uses **Semantic Versioning** (MAJOR.MINOR.PATCH).
+
+### Changelog
+This project follows **Keep a Changelog** format.
+
+## Documentation Language
+
+This project uses **English** for documentation.
+<!-- Options: English | 中文 -->
+
+## Requirement Language
+
+This project uses **English** for requirements and issues.
+<!-- Options: English | 中文 -->
 ```
 
 ---

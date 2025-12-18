@@ -5,6 +5,20 @@
 
 ---
 
+## Disabled Skills
+
+<!--
+All skills are enabled by default.
+Uncomment and list skills you want to DISABLE for this project.
+-->
+
+<!--
+- testing-guide
+- release-standards
+-->
+
+---
+
 ## Development Standards
 
 ### Commit Message Language

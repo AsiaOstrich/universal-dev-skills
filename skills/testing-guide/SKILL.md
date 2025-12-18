@@ -121,4 +121,55 @@ test('method_scenario_expected', () => {
 
 ---
 
+## Configuration Detection
+
+This skill supports project-specific configuration.
+
+### Detection Order
+
+1. Check `CONTRIBUTING.md` for "Disabled Skills" section
+   - If this skill is listed, it is disabled for this project
+2. Check `CONTRIBUTING.md` for "Testing Standards" section
+3. If not found, **default to standard coverage targets**
+
+### First-Time Setup
+
+If no configuration found and context is unclear:
+
+1. Ask the user: "This project hasn't configured testing standards. Would you like to customize coverage targets?"
+2. After user selection, suggest documenting in `CONTRIBUTING.md`:
+
+```markdown
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+```
+
+### Configuration Example
+
+In project's `CONTRIBUTING.md`:
+
+```markdown
+## Testing Standards
+
+### Coverage Targets
+| Metric | Target |
+|--------|--------|
+| Line | 80% |
+| Branch | 70% |
+| Function | 85% |
+
+### Testing Framework
+- Unit Tests: Jest
+- Integration Tests: Supertest
+- E2E Tests: Playwright
+```
+
+---
+
 **License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)
