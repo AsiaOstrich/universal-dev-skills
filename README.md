@@ -4,7 +4,7 @@
 
 Claude Code Skills for software development standards.
 
-> Derived from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.0
+> Derived from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.1
 
 ## Overview
 
@@ -65,11 +65,18 @@ git commit -m "chore: add universal-dev-skills"
 
 ## Configuration
 
-Skills support project-specific configuration through your project's `CONTRIBUTING.md`. Configuration works at two levels:
+Skills support project-specific configuration through your project's `CONTRIBUTING.md`.
 
-### 1. Disable Skills
+### Two Ways to Disable Skills
 
-By default, all installed skills are enabled. To disable specific skills:
+| Level | Method | Use Case |
+|-------|--------|----------|
+| **Project-level** (Recommended) | Add `## Disabled Skills` section to `CONTRIBUTING.md` | Affects only current project, version-controlled |
+| **Global-level** | Remove from `~/.claude/skills/` | Affects all projects |
+
+### Project-level Disable (Recommended)
+
+Add to your project's `CONTRIBUTING.md`:
 
 ```markdown
 ## Disabled Skills
@@ -79,7 +86,7 @@ By default, all installed skills are enabled. To disable specific skills:
 <!-- Skills listed here will be disabled -->
 ```
 
-### 2. Skill-Specific Options
+### Skill-Specific Options
 
 | Skill | Configuration | Default |
 |-------|---------------|---------|
@@ -169,17 +176,15 @@ If no configuration is found:
 3. On first use with unclear context, Claude may ask for your preference
 4. Claude will suggest documenting your choice in `CONTRIBUTING.md`
 
-## Managing Skills
+## Global-level Management
 
-### Disable a Specific Skill
+### Uninstall a Skill
 
-**Global level** (affects all projects):
+Remove a skill from all projects:
+
 ```bash
 rm -rf ~/.claude/skills/[skill-name]
 ```
-
-**Project level** (affects current project only):
-- Simply don't include the skill in your project's `.claude/skills/` directory
 
 ### Skill Priority
 
@@ -187,11 +192,12 @@ When the same skill exists in both locations:
 1. **Project level** (`.claude/skills/`) takes precedence
 2. **Global level** (`~/.claude/skills/`) is used as fallback
 
-This allows you to override or disable specific skills per project.
+This allows you to override specific skill behavior per project.
 
-### Reinstall Skills
+### Update Skills
 
 To reinstall or update skills:
+
 ```bash
 cd universal-dev-skills
 git pull
@@ -225,6 +231,7 @@ These skills are derived from [universal-doc-standards](https://github.com/AsiaO
 
 | universal-dev-skills | universal-doc-standards |
 |----------------------|------------------------|
+| v1.1.0 | v1.3.1 |
 | v1.0.0 | v1.3.0 |
 
 ## Contributing

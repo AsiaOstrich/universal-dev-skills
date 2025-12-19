@@ -57,6 +57,19 @@ describe('UserValidator', () => {
 
 Tests interactions between multiple components, modules, or external systems.
 
+### When Integration Tests Are Required | 何時必須有整合測試
+
+| Scenario | Reason |
+|----------|--------|
+| Query predicates | Mocks cannot verify filter expressions |
+| Entity relationships | Verify foreign key correctness |
+| Composite keys | In-memory DB may differ from real DB |
+| Field mapping | DTO ↔ Entity transformations |
+| Pagination | Row ordering and counting |
+| Transactions | Rollback behavior |
+
+**Decision Rule**: If your unit test uses a wildcard matcher (`any()`, `It.IsAny<>`, `Arg.Any<>`) for a query/filter parameter, that functionality MUST have an integration test.
+
 ### Characteristics
 
 - **Component Integration**: Tests module boundaries
@@ -96,10 +109,10 @@ describe('UserRepository Integration', () => {
 
     it('should persist user to database', async () => {
         const user = { name: 'Test User', email: 'test@example.com' };
-        
+
         await repository.create(user);
         const saved = await repository.getById(user.id);
-        
+
         expect(saved).not.toBeNull();
         expect(saved.name).toBe('Test User');
     });
@@ -250,6 +263,23 @@ describe('Database Integration', () => {
 
 ---
 
+## Mock Limitations | Mock 限制
+
+### Query Predicate Verification
+
+When mocking repository methods that accept query predicates (e.g., lambda expressions, filter functions), using wildcard matchers like `any()` ignores the actual query logic, allowing incorrect queries to pass unit tests.
+
+```typescript
+// ❌ Jest mock ignores actual filter
+jest.spyOn(repo, 'findBy').mockResolvedValue(users);
+
+// ✓ Verify with integration test
+```
+
+**Rule of Thumb**: If your unit test mocks a method that accepts a query/filter/predicate parameter, you MUST have a corresponding integration test to verify the query logic.
+
+---
+
 ## Test Data Management
 
 ### Principles
@@ -258,6 +288,32 @@ describe('Database Integration', () => {
 2. **Cleanup**: Tests clean up after themselves
 3. **Determinism**: Tests don't depend on shared state
 4. **Readability**: Test data clearly shows intent
+
+### Distinct Identifiers | 區分識別欄位
+
+When entities have both a surrogate key (auto-generated ID) and a business identifier (e.g., employee number, department code), test data MUST use different values for each.
+
+```typescript
+// ❌ Wrong: id equals businessCode - mapping errors go undetected
+const dept = { id: 1, businessCode: 1 };
+
+// ✓ Correct: distinct values catch field mapping bugs
+const dept = { id: 1, businessCode: 1001 };
+```
+
+### Composite Keys | 複合主鍵
+
+For entities with composite primary keys, ensure each record has a unique key combination.
+
+```typescript
+// ❌ Key collision - same (id, timestamp) combination
+const record1 = { id: 0, timestamp: now };
+const record2 = { id: 0, timestamp: now };  // Conflict!
+
+// ✓ Unique combinations
+const record1 = { id: 0, timestamp: addSeconds(now, 1) };
+const record2 = { id: 0, timestamp: addSeconds(now, 2) };
+```
 
 ### Builder Pattern
 
@@ -308,6 +364,8 @@ const inactiveUser = new UserBuilder().inactive().build();
 └──────────┴──────────────────────────────────────────┘
 
 Ratio: UT 70% | IT 20% | ST 7% | E2E 3%
+
+Mock Rule: If UT mocks query params → IT is REQUIRED
 ```
 
 ---

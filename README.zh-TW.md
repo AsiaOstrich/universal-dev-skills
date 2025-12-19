@@ -4,7 +4,7 @@
 
 軟體開發標準的 Claude Code Skills。
 
-> 衍生自 [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.0
+> 衍生自 [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.1
 
 ## 概述
 
@@ -65,11 +65,18 @@ git commit -m "chore: add universal-dev-skills"
 
 ## 設定
 
-Skills 支援透過專案的 `CONTRIBUTING.md` 進行專案層級設定。設定分為兩個層次：
+Skills 支援透過專案的 `CONTRIBUTING.md` 進行專案層級設定。
 
-### 1. 停用 Skills
+### 停用 Skills 的兩種方式
 
-預設情況下，所有已安裝的 skills 都會啟用。若要停用特定 skills：
+| 層級 | 方法 | 適用情境 |
+|------|------|----------|
+| **專案層級**（推薦） | 在 `CONTRIBUTING.md` 加入 `## Disabled Skills` | 僅影響當前專案，可版控共享 |
+| **全域層級** | 從 `~/.claude/skills/` 刪除 | 影響所有專案 |
+
+### 專案層級停用（推薦）
+
+在專案的 `CONTRIBUTING.md` 中加入：
 
 ```markdown
 ## Disabled Skills
@@ -79,7 +86,7 @@ Skills 支援透過專案的 `CONTRIBUTING.md` 進行專案層級設定。設定
 <!-- 列出的 skills 將被停用 -->
 ```
 
-### 2. 各 Skill 專屬選項
+### 各 Skill 專屬選項
 
 | Skill | 設定項目 | 預設值 |
 |-------|----------|--------|
@@ -169,17 +176,15 @@ This project uses **中文** for requirements and issues.
 3. 首次使用且上下文不明確時，Claude 可能會詢問你的偏好
 4. Claude 會建議將選擇記錄在 `CONTRIBUTING.md`
 
-## 管理 Skills
+## 全域層級管理
 
-### 停用特定 Skill
+### 解除安裝 Skill
 
-**全域層級**（影響所有專案）：
+從所有專案移除特定 skill：
+
 ```bash
 rm -rf ~/.claude/skills/[skill-name]
 ```
-
-**專案層級**（僅影響當前專案）：
-- 不要在專案的 `.claude/skills/` 目錄中包含該 skill 即可
 
 ### Skill 優先順序
 
@@ -187,11 +192,12 @@ rm -rf ~/.claude/skills/[skill-name]
 1. **專案層級** (`.claude/skills/`) 優先
 2. **全域層級** (`~/.claude/skills/`) 作為備用
 
-這讓你可以針對不同專案覆蓋或停用特定 skills。
+這讓你可以針對不同專案覆蓋特定 skills 的行為。
 
-### 重新安裝 Skills
+### 更新 Skills
 
 重新安裝或更新 skills：
+
 ```bash
 cd universal-dev-skills
 git pull
@@ -225,6 +231,7 @@ git pull
 
 | universal-dev-skills | universal-doc-standards |
 |----------------------|------------------------|
+| v1.1.0 | v1.3.1 |
 | v1.0.0 | v1.3.0 |
 
 ## 貢獻
