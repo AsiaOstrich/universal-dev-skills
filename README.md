@@ -227,6 +227,24 @@ These skills are derived from [universal-doc-standards](https://github.com/AsiaO
 | documentation-guide | `core/documentation-structure.md` |
 | requirement-assistant | `templates/requirement-*.md` |
 
+### Standards NOT Covered by Skills
+
+Not all standards from universal-doc-standards are converted to Skills. The following are **reference documents** that should be copied directly to your project:
+
+| Standard | Description |
+|----------|-------------|
+| `checkin-standards.md` | Pre-commit quality gates |
+| `spec-driven-development.md` | SDD methodology |
+| `documentation-writing-standards.md` | Content writing guidelines |
+| `project-structure.md` | Directory conventions |
+| Language/Framework extensions | Coding style guides |
+| AI tool integrations | Tool configuration files |
+
+> **Important**: For standards with Skills available, use the Skill OR copy the source document — **never both**.
+
+📖 See [STANDARDS-COVERAGE.md](STANDARDS-COVERAGE.md) for complete coverage details.
+📖 See [Adoption Guide](https://github.com/AsiaOstrich/universal-doc-standards/blob/main/adoption/ADOPTION-GUIDE.md) for comprehensive adoption guidance.
+
 ## Version Mapping
 
 | universal-dev-skills | universal-doc-standards |
