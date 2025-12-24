@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2025-12-25
+
+### Changed
+
+- Sync with upstream v2.3.0
+  與上游 v2.3.0 同步
+- Upstream v2.3.0 includes: multilingual support (locales/), static/dynamic standards classification, ~50% token reduction for AI tools
+  上游 v2.3.0 包含：多語系支援（locales/）、靜態/動態規範分類、AI 工具約 50% token 減量
+
 ## [2.0.0] - 2025-12-25
 
 ### Changed
@@ -53,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dual-license model (CC BY 4.0 for docs, MIT for code)
 - Derived from universal-dev-standards v1.3.0
 
-[Unreleased]: https://github.com/AsiaOstrich/universal-dev-skills/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/AsiaOstrich/universal-dev-skills/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/AsiaOstrich/universal-dev-skills/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/AsiaOstrich/universal-dev-skills/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/AsiaOstrich/universal-dev-skills/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/AsiaOstrich/universal-dev-skills/releases/tag/v1.0.0

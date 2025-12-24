@@ -4,7 +4,7 @@
 
 軟體開發標準的 Claude Code Skills。
 
-> 衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) v2.2.0
+> 衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) v2.3.0
 
 ## 概述
 
@@ -231,6 +231,7 @@ git pull
 
 | universal-dev-skills | universal-dev-standards |
 |----------------------|------------------------|
+| v2.1.0 | v2.3.0 |
 | v2.0.0 | v2.2.0 |
 | v1.1.0 | v1.3.1 |
 | v1.0.0 | v1.3.0 |

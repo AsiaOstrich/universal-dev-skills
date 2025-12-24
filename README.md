@@ -4,7 +4,7 @@
 
 Claude Code Skills for software development standards.
 
-> Derived from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) v2.2.0
+> Derived from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) v2.3.0
 
 ## Overview
 
@@ -249,6 +249,7 @@ Not all standards from universal-dev-standards are converted to Skills. The foll
 
 | universal-dev-skills | universal-dev-standards |
 |----------------------|------------------------|
+| v2.1.0 | v2.3.0 |
 | v2.0.0 | v2.2.0 |
 | v1.1.0 | v1.3.1 |
 | v1.0.0 | v1.3.0 |

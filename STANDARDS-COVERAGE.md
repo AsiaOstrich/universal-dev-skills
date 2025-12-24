@@ -109,6 +109,7 @@ This prevents confusion and ensures consistency in how standards are applied.
 
 | universal-dev-skills | universal-dev-standards | Changes |
 |----------------------|------------------------|---------|
+| v2.1.0 | v2.3.0 | Sync with upstream (multilingual support, static/dynamic classification) |
 | v2.0.0 | v2.2.0 | Update upstream source (project renamed, Skills integrated) |
 | v1.1.0 | v1.3.1 | Added requirement-assistant |
 | v1.0.0 | v1.3.0 | Initial release with 7 skills |
