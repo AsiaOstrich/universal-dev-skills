@@ -283,11 +283,47 @@ This project uses **中文** for requirements and issues.
 
 ## 上游同步
 
-本專案的內容衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards)。更新 Skills 時：
+本專案的內容衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards)。使用 `./sync-upstream.sh` 輔助同步流程。
 
-1. 檢查上游是否有更新
-2. 同步相關變更到 Skills
-3. 更新 README.md 中的版本對照
+### 同步檢查清單
+
+當上游發布新版本時：
+
+1. **查看上游變更**：[releases 頁面](https://github.com/AsiaOstrich/universal-dev-standards/releases)
+2. **判斷同步類型**：
+
+| 上游變更 | 動作 | 版本號變更 |
+|---------|------|-----------|
+| Skills 內容更新 | 同步 skill 檔案 | MINOR |
+| 結構性優化 | 僅更新版本對應 | MINOR |
+| 新增 Skill | 新增目錄 + 更新 install.sh | MINOR |
+| 移除/重命名 Skill | 同步 + BREAKING 標記 | MAJOR |
+
+3. **更新版本對應**：
+   - `README.md`（開頭 + Version Mapping 表格）
+   - `README.zh-TW.md`（開頭 + 版本對照表格）
+   - `STANDARDS-COVERAGE.md`（Version Mapping 表格）
+
+4. **更新 CHANGELOG.md**，新增版本條目
+
+5. **提交並打標籤**：
+   ```bash
+   git commit -m "chore(release): prepare vX.Y.0 - sync with upstream vA.B.C"
+   git tag vX.Y.0
+   ```
+
+### Skill 與上游來源對應
+
+| Skill | 上游來源 |
+|-------|---------|
+| ai-collaboration-standards | `core/anti-hallucination.md` + `extensions/locales/zh-tw.md` |
+| commit-standards | `core/commit-message-guide.md` + `extensions/locales/zh-tw.md` |
+| code-review-assistant | `core/code-review-checklist.md` + `core/checkin-standards.md` |
+| testing-guide | `core/testing-standards.md` |
+| release-standards | `core/versioning.md` + `core/changelog-standards.md` |
+| git-workflow-guide | `core/git-workflow.md` |
+| documentation-guide | `core/documentation-structure.md` |
+| requirement-assistant | `templates/requirement-*.md` |
 
 ## Skill 結構
 

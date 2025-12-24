@@ -283,11 +283,47 @@ This project uses **English** for requirements and issues.
 
 ## Upstream Sync
 
-This project derives its content from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards). When updating skills:
+This project derives its content from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards). Use `./sync-upstream.sh` to assist with the sync process.
 
-1. Check upstream for updates
-2. Sync relevant changes to skills
-3. Update version mapping in README.md
+### Sync Checklist
+
+When upstream releases a new version:
+
+1. **Check upstream changes** at [releases page](https://github.com/AsiaOstrich/universal-dev-standards/releases)
+2. **Determine sync type**:
+
+| Upstream Change | Action | Version Bump |
+|-----------------|--------|--------------|
+| Skills content update | Sync skill files | MINOR |
+| Structural optimization | Update version mapping only | MINOR |
+| New Skill added | Add skill dir + update install.sh | MINOR |
+| Skill removed/renamed | Sync + BREAKING tag | MAJOR |
+
+3. **Update version mapping** in:
+   - `README.md` (header + Version Mapping table)
+   - `README.zh-TW.md` (header + 版本對照 table)
+   - `STANDARDS-COVERAGE.md` (Version Mapping table)
+
+4. **Update CHANGELOG.md** with new entry
+
+5. **Commit and tag**:
+   ```bash
+   git commit -m "chore(release): prepare vX.Y.0 - sync with upstream vA.B.C"
+   git tag vX.Y.0
+   ```
+
+### Skill to Source Mapping
+
+| Skill | Upstream Source |
+|-------|----------------|
+| ai-collaboration-standards | `core/anti-hallucination.md` + `extensions/locales/zh-tw.md` |
+| commit-standards | `core/commit-message-guide.md` + `extensions/locales/zh-tw.md` |
+| code-review-assistant | `core/code-review-checklist.md` + `core/checkin-standards.md` |
+| testing-guide | `core/testing-standards.md` |
+| release-standards | `core/versioning.md` + `core/changelog-standards.md` |
+| git-workflow-guide | `core/git-workflow.md` |
+| documentation-guide | `core/documentation-structure.md` |
+| requirement-assistant | `templates/requirement-*.md` |
 
 ## Skill Structure
 
