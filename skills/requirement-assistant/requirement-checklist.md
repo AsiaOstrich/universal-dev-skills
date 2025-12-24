@@ -282,4 +282,4 @@ Before submitting for development:
 
 ---
 
-**License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)
+**License**: CC BY 4.0 | **Source**: [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards)

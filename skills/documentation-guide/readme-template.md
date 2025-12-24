@@ -369,4 +369,4 @@ See [documentation](docs/old-path.md) for more info.  ← Link doesn't exist
 
 ---
 
-**License**: CC BY 4.0 | **Source**: [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)
+**License**: CC BY 4.0 | **Source**: [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards)

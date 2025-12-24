@@ -4,7 +4,7 @@
 
 Claude Code Skills for software development standards.
 
-> Derived from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.1
+> Derived from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) v2.2.0
 
 ## Overview
 
@@ -214,7 +214,7 @@ Once installed, Claude Code will automatically discover and use these skills bas
 
 ## Upstream Source
 
-These skills are derived from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards), a comprehensive documentation standards library.
+These skills are derived from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards), a comprehensive documentation standards library.
 
 | Skill | Upstream Source |
 |-------|----------------|
@@ -229,7 +229,7 @@ These skills are derived from [universal-doc-standards](https://github.com/AsiaO
 
 ### Standards NOT Covered by Skills
 
-Not all standards from universal-doc-standards are converted to Skills. The following are **reference documents** that should be copied directly to your project:
+Not all standards from universal-dev-standards are converted to Skills. The following are **reference documents** that should be copied directly to your project:
 
 | Standard | Description |
 |----------|-------------|
@@ -243,12 +243,13 @@ Not all standards from universal-doc-standards are converted to Skills. The foll
 > **Important**: For standards with Skills available, use the Skill OR copy the source document — **never both**.
 
 📖 See [STANDARDS-COVERAGE.md](STANDARDS-COVERAGE.md) for complete coverage details.
-📖 See [Adoption Guide](https://github.com/AsiaOstrich/universal-doc-standards/blob/main/adoption/ADOPTION-GUIDE.md) for comprehensive adoption guidance.
+📖 See [Adoption Guide](https://github.com/AsiaOstrich/universal-dev-standards/blob/main/adoption/ADOPTION-GUIDE.md) for comprehensive adoption guidance.
 
 ## Version Mapping
 
-| universal-dev-skills | universal-doc-standards |
+| universal-dev-skills | universal-dev-standards |
 |----------------------|------------------------|
+| v2.0.0 | v2.2.0 |
 | v1.1.0 | v1.3.1 |
 | v1.0.0 | v1.3.0 |
 

@@ -4,7 +4,7 @@
 
 軟體開發標準的 Claude Code Skills。
 
-> 衍生自 [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) v1.3.1
+> 衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) v2.2.0
 
 ## 概述
 
@@ -214,7 +214,7 @@ git pull
 
 ## 上游來源
 
-這些 skills 衍生自 [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)，一個完整的文件標準庫。
+這些 skills 衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards)，一個完整的文件標準庫。
 
 | Skill | 上游來源 |
 |-------|---------|
@@ -229,8 +229,9 @@ git pull
 
 ## 版本對照
 
-| universal-dev-skills | universal-doc-standards |
+| universal-dev-skills | universal-dev-standards |
 |----------------------|------------------------|
+| v2.0.0 | v2.2.0 |
 | v1.1.0 | v1.3.1 |
 | v1.0.0 | v1.3.0 |
 

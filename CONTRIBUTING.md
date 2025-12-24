@@ -283,7 +283,7 @@ This project uses **English** for requirements and issues.
 
 ## Upstream Sync
 
-This project derives its content from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards). When updating skills:
+This project derives its content from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards). When updating skills:
 
 1. Check upstream for updates
 2. Sync relevant changes to skills

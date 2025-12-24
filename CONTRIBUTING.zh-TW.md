@@ -283,7 +283,7 @@ This project uses **中文** for requirements and issues.
 
 ## 上游同步
 
-本專案的內容衍生自 [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards)。更新 Skills 時：
+本專案的內容衍生自 [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards)。更新 Skills 時：
 
 1. 檢查上游是否有更新
 2. 同步相關變更到 Skills

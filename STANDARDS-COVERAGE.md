@@ -1,8 +1,8 @@
 # Standards Coverage Report | 規範涵蓋報告
 
-> This document details the relationship between [universal-dev-skills](https://github.com/AsiaOstrich/universal-dev-skills) and [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards).
+> This document details the relationship between [universal-dev-skills](https://github.com/AsiaOstrich/universal-dev-skills) and [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards).
 >
-> 本文件詳細說明 universal-dev-skills 與 universal-doc-standards 之間的關係。
+> 本文件詳細說明 universal-dev-skills 與 universal-dev-standards 之間的關係。
 
 ---
 
@@ -25,9 +25,9 @@
 
 ## Standards NOT Covered by Skills | 未被 Skills 涵蓋的規範
 
-These standards are **reference documents** that provide guidelines but don't fit the interactive workflow model of Claude Code Skills. Projects should copy them directly from [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards).
+These standards are **reference documents** that provide guidelines but don't fit the interactive workflow model of Claude Code Skills. Projects should copy them directly from [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards).
 
-這些規範是**參考文件**，提供指南但不適合製作成互動式工作流程的 Skills。專案應直接從 universal-doc-standards 複製。
+這些規範是**參考文件**，提供指南但不適合製作成互動式工作流程的 Skills。專案應直接從 universal-dev-standards 複製。
 
 ### Core Standards | 核心規範
 
@@ -71,7 +71,7 @@ These standards are **reference documents** that provide guidelines but don't fi
 ### Option 1: Use Both Projects | 選項一：同時使用兩個專案
 
 1. Install Skills for interactive AI assistance
-2. Copy reference documents from universal-doc-standards
+2. Copy reference documents from universal-dev-standards
 
 ```bash
 # Install Skills
@@ -81,13 +81,13 @@ cd universal-dev-skills
 
 # Copy reference documents
 mkdir -p your-project/.standards
-cp path/to/universal-doc-standards/core/checkin-standards.md your-project/.standards/
-cp path/to/universal-doc-standards/core/spec-driven-development.md your-project/.standards/
+cp path/to/universal-dev-standards/core/checkin-standards.md your-project/.standards/
+cp path/to/universal-dev-standards/core/spec-driven-development.md your-project/.standards/
 ```
 
 ### Option 2: Use Adoption Guide | 選項二：使用採用指南
 
-See the comprehensive [Adoption Guide](https://github.com/AsiaOstrich/universal-doc-standards/blob/main/adoption/ADOPTION-GUIDE.md) for:
+See the comprehensive [Adoption Guide](https://github.com/AsiaOstrich/universal-dev-standards/blob/main/adoption/ADOPTION-GUIDE.md) for:
 
 - Complete standards matrix
 - Level-based adoption checklists
@@ -107,8 +107,9 @@ This prevents confusion and ensures consistency in how standards are applied.
 
 ## Version Mapping | 版本對照
 
-| universal-dev-skills | universal-doc-standards | Changes |
+| universal-dev-skills | universal-dev-standards | Changes |
 |----------------------|------------------------|---------|
+| v2.0.0 | v2.2.0 | Update upstream source (project renamed, Skills integrated) |
 | v1.1.0 | v1.3.1 | Added requirement-assistant |
 | v1.0.0 | v1.3.0 | Initial release with 7 skills |
 
@@ -116,6 +117,6 @@ This prevents confusion and ensures consistency in how standards are applied.
 
 ## Related Links | 相關連結
 
-- [universal-doc-standards](https://github.com/AsiaOstrich/universal-doc-standards) - Source of truth for all standards
-- [Adoption Guide](https://github.com/AsiaOstrich/universal-doc-standards/blob/main/adoption/ADOPTION-GUIDE.md) - Complete adoption guidance
-- [Standards Registry](https://github.com/AsiaOstrich/universal-doc-standards/blob/main/adoption/standards-registry.json) - Machine-readable mapping
+- [universal-dev-standards](https://github.com/AsiaOstrich/universal-dev-standards) - Source of truth for all standards
+- [Adoption Guide](https://github.com/AsiaOstrich/universal-dev-standards/blob/main/adoption/ADOPTION-GUIDE.md) - Complete adoption guidance
+- [Standards Registry](https://github.com/AsiaOstrich/universal-dev-standards/blob/main/adoption/standards-registry.json) - Machine-readable mapping
